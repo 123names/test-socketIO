@@ -4,11 +4,11 @@ import './MessageInput.css';
 const NewMessage = ({socket}) => {
   const [value, setValue] = useState('');
 
-  console.log("Current socket: ", socket);
-  
+  console.log("Current socket message to server: ", socket);
+
   const submitForm = (e) => {
     e.preventDefault();
-    socket.emit('message', value);
+    socket.emit('startAutoGroupFiles',{userId: "123", previewId: "123"});
     setValue('');
   };
 
